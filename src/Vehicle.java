@@ -2,6 +2,10 @@ class Vehicle {
     int passengers;
     int fuel_cap;
     int mpg;
+
+    int range() {
+        return fuel_cap * mpg;
+    }
 }
 
 class VehicleDemo {
@@ -19,10 +23,10 @@ class VehicleDemo {
         sport_scar.fuel_cap = 14;
         sport_scar.mpg = 12;
 
-        range_01 = minivan.fuel_cap * minivan.mpg;
-        range_02 = sport_scar.fuel_cap * sport_scar.mpg;
+        range_01 = minivan.range();
+        range_02 = sport_scar.range();
 
-        System.out.println("Minivan can carry " + minivan.passengers + " with a range of " + range_01);
-        System.out.println("Sport_scar can carry " + sport_scar.passengers + " with a range of " + range_02);
+        System.out.println("Minivan can carry " + minivan.passengers + " with range of " + range_01 + " Miles");
+        System.out.println("Sport_scar can carry " + sport_scar.passengers + " with range of " + range_02 + " miles");
     }
 }
