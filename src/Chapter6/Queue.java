@@ -1,7 +1,7 @@
 package Chapter6;
 
 class Queue {
-    private char[] q;
+    private final char[] q;
     private int put_loc, get_loc;
 
     Queue(int size) {
