@@ -25,4 +25,32 @@ class Queue {
         }
         return q[get_loc++];
     }
+
+    int size() {
+        return put_loc - get_loc;
+    }
+
+    boolean isEmpty() {
+        return get_loc == put_loc;
+    }
+
+    boolean isFull() {
+        return put_loc == q.length;
+    }
+}
+
+class Queue_Demo {
+//    public static String printQueue(Queue queue) {
+//        StringBuilder sb = new StringBuilder();
+//
+//    }
+
+    public static void main(String[] args) {
+        Queue queue = new Queue(5);
+        System.out.println("Testing put operation.");
+        queue.put('a');
+        queue.put('b');
+        queue.put('c');
+        System.out.println("Elements in queue after puts: ");
+    }
 }
