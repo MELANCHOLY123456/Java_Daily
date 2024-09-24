@@ -1,3 +1,5 @@
+package Chapter4;
+
 class Vehicle {
     int passengers;
     int fuel_cap;

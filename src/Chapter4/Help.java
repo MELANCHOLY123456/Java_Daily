@@ -1,3 +1,5 @@
+package Chapter4;
+
 class Help {
     void helpOn(int what) {
         switch (what) {
@@ -43,7 +45,7 @@ class Help {
     }
 
     void showMenu() {
-        System.out.println("Help on:");
+        System.out.println("Chapter4.Help on:");
         System.out.println("  1. if");
         System.out.println("  2. switch");
         System.out.println("  3. for");
