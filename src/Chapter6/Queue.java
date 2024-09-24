@@ -2,7 +2,8 @@ package Chapter6;
 
 class Queue {
     private final char[] q;
-    private int put_loc, get_loc;
+    private int put_loc; // 表示下一个元素将被放入队列的位置
+    private int get_loc; // 表示下一个元素将从队列中取出的位置
 
     Queue(int size) {
         q = new char[size];
