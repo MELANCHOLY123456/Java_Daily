@@ -8,6 +8,10 @@ class Overload2 {
     void f(double x) {
         System.out.println("Inside f(double): " + x);
     }
+
+    void f(byte x) {
+        System.out.println("Inside f(byte): " + x);
+    }
 }
 
 class Overload2Demo {
@@ -24,8 +28,8 @@ class Overload2Demo {
 
         ob.f(i); // calls ob.f(int)
         ob.f(d); // calls ob.f(double)
+        ob.f(b); // calls ob.f(byte)
 
-        ob.f(b); // calls ob.f(int) -- type conversion
         ob.f(s); // calls ob.f(int) -- type conversion
         ob.f(f); // calls ob.f(double) -- type conversion
     }
