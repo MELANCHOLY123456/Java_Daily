@@ -3,24 +3,29 @@ package Chapter7;
 class TwoDShape {
     private double width;
     private double height;
+    private String name;
 
     // 默认构造函数
     TwoDShape() {
         width = height = 0.0;
+        name = "none";
     }
 
-    TwoDShape(double x) {
+    TwoDShape(double x, String n) {
         width = height = x;
+        name = n;
     }
 
-    TwoDShape(double w, double h) {
+    TwoDShape(double w, double h, String n) {
         width = w;
         height = h;
+        name = n;
     }
 
     TwoDShape(TwoDShape ob) {
         width = ob.width;
         height = ob.height;
+        name = ob.name;
     }
 
     double getWidth() {
@@ -39,8 +44,17 @@ class TwoDShape {
         height = h;
     }
 
+    String getName() {
+        return name;
+    }
+
     void showDim() {
         System.out.println("Width and height are " + width + " and " + height);
+    }
+
+    double area() {
+        System.out.println("area() must be overridden");
+        return 0.0;
     }
 }
 
@@ -53,13 +67,13 @@ class Triangle extends TwoDShape {
     }
 
     Triangle(double x) {
-        super(x);
+        super(x, "triangle");
         style = "filled";
     }
 
     Triangle(String s, double w, double h) {
         // super()必须是在子类构造函数中执行的第一条语句
-        super(w, h);
+        super(w, h, "triangle");
         style = s;
     }
 
@@ -95,9 +109,21 @@ class ColorTriangle extends Triangle {
 }
 
 class Rectangle extends TwoDShape {
+    Rectangle() {
+        super();
+    }
+
     Rectangle(double w, double h) {
         // super()必须是在子类构造函数中执行的第一条语句
-        super(w, h);
+        super(w, h, "rectangle");
+    }
+
+    Rectangle(double x) {
+        super(x, "rectangle"); // call superclass constructor
+    }
+
+    Rectangle(Rectangle ob) {
+        super(ob); // pass object to TwoDShape constructor
     }
 
     boolean isSquare() {
@@ -190,5 +216,24 @@ class ShapesDemo02 {
         t2.showStyle();
         t2.showDim();
         System.out.println("Area is " + t2.area());
+    }
+}
+
+class DynShapes {
+    public static void main(String[] args) {
+        TwoDShape[] shapes = new TwoDShape[5];
+
+        shapes[0] = new Triangle("outlined", 8.0, 12.0);
+        shapes[1] = new Rectangle(10);
+        shapes[2] = new Rectangle(10, 4);
+        shapes[3] = new Triangle(7.0);
+        shapes[4] = new TwoDShape(10, 20, "generic");
+
+        for (TwoDShape shape : shapes) {
+            System.out.println("object is " + shape.getName());
+            System.out.println("Area is " + shape.area());
+
+            System.out.println();
+        }
     }
 }
