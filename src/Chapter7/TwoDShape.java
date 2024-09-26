@@ -4,6 +4,11 @@ class TwoDShape {
     private double width;
     private double height;
 
+    TwoDShape(double w, double h) {
+        width = w;
+        height = h;
+    }
+
     double getWidth() {
         return width;
     }
@@ -26,7 +31,13 @@ class TwoDShape {
 }
 
 class Triangle extends TwoDShape {
-    String style;
+    private final String style;
+
+    Triangle(String s, double w, double h) {
+        // super()必须是在子类构造函数中执行的第一条语句
+        super(w, h);
+        style = s;
+    }
 
     double area() {
         return getWidth() * getHeight() / 2;
@@ -38,6 +49,11 @@ class Triangle extends TwoDShape {
 }
 
 class Rectangle extends TwoDShape {
+    Rectangle(double w, double h) {
+        // super()必须是在子类构造函数中执行的第一条语句
+        super(w, h);
+    }
+
     boolean isSquare() {
         return getWidth() == getHeight();
     }
@@ -49,16 +65,8 @@ class Rectangle extends TwoDShape {
 
 class Shapes {
     public static void main(String[] args) {
-        Triangle t1 = new Triangle();
-        Triangle t2 = new Triangle();
-
-        t1.setWidth(4.0);
-        t1.setHeight(4.0);
-        t1.style = "filled";
-
-        t2.setWidth(8.0);
-        t2.setHeight(12.0);
-        t2.style = "outlined";
+        Triangle t1 = new Triangle("filled", 4.0, 4.0);
+        Triangle t2 = new Triangle("outlined", 8.0, 12.0);
 
         System.out.println("Info for t1: ");
         t1.showStyle();
@@ -72,14 +80,8 @@ class Shapes {
         System.out.println("Area is " + t2.area());
         System.out.println();
 
-        Rectangle r1 = new Rectangle();
-        Rectangle r2 = new Rectangle();
-
-        r1.setWidth(5.0);
-        r1.setHeight(5.0);
-
-        r2.setWidth(4.0);
-        r2.setHeight(7.0);
+        Rectangle r1 = new Rectangle(5.0, 5.0);
+        Rectangle r2 = new Rectangle(4.0, 7.0);
 
         System.out.println("Info for r1: ");
         r1.showDim();
