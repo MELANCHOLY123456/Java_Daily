@@ -4,6 +4,15 @@ class TwoDShape {
     private double width;
     private double height;
 
+    // 默认构造函数
+    TwoDShape() {
+        width = height = 0.0;
+    }
+
+    TwoDShape(double x) {
+        width = height = x;
+    }
+
     TwoDShape(double w, double h) {
         width = w;
         height = h;
@@ -32,6 +41,16 @@ class TwoDShape {
 
 class Triangle extends TwoDShape {
     private final String style;
+
+    Triangle() {
+        super();
+        style = "none";
+    }
+
+    Triangle(double x) {
+        super(x);
+        style = "filled";
+    }
 
     Triangle(String s, double w, double h) {
         // super()必须是在子类构造函数中执行的第一条语句
@@ -65,8 +84,9 @@ class Rectangle extends TwoDShape {
 
 class Shapes {
     public static void main(String[] args) {
-        Triangle t1 = new Triangle("filled", 4.0, 4.0);
+        Triangle t1 = new Triangle(4.0);
         Triangle t2 = new Triangle("outlined", 8.0, 12.0);
+        Triangle t3 = new Triangle();
 
         System.out.println("Info for t1: ");
         t1.showStyle();
@@ -78,6 +98,12 @@ class Shapes {
         t2.showStyle();
         t2.showDim();
         System.out.println("Area is " + t2.area());
+        System.out.println();
+
+        System.out.println("Info for t3: ");
+        t3.showStyle();
+        t3.showDim();
+        System.out.println("Area is " + t3.area());
         System.out.println();
 
         Rectangle r1 = new Rectangle(5.0, 5.0);
