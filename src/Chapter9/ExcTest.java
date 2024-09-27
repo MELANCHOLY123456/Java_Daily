@@ -23,7 +23,10 @@ class ExcDemo2 {
             ExcTest.genException();
         } catch (ArrayIndexOutOfBoundsException exc) {
             // catch the exception
-            System.out.println("Index out-of-bounds!");
+            System.out.println("Standard message is: ");
+            System.out.println(exc);
+            System.out.println("\nStack trace: ");
+            exc.printStackTrace(); // 打印异常的堆栈跟踪信息
         }
         System.out.println("After catch statement.");
     }
