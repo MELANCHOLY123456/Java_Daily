@@ -7,6 +7,7 @@ import java.io.IOException;
 public class ShowFile {
     public static void main(String[] args) {
         int i;
+        // 创建FileInputStream对象
         FileInputStream fin;
 
         if (args.length != 1) {
