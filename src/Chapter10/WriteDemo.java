@@ -12,4 +12,5 @@ public class WriteDemo {
 /*
  * System.out.write()方法需要一个整数作为参数，它会将该整数解释为一个字节值并输出对应的字符
  * System.out.println()可以更简便地输出带换行的字符串
+ * 不会经常用write()来执行控制台输出(尽管在某些情况下很有用) -> 因为println()更简单
  * */
