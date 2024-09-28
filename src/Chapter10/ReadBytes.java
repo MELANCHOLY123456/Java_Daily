@@ -8,6 +8,7 @@ public class ReadBytes {
         System.out.println("Enter some characters (up to 10):");
         // 该方法会一直读取直到遇到换行符或者达到数组的大小限制
         int bytesRead = System.in.read(data); // 读取数据到数组中
+        System.out.println(bytesRead);
         if (bytesRead == -1) {
             System.out.println("No data was entered.");
         } else {
@@ -18,3 +19,8 @@ public class ReadBytes {
         }
     }
 }
+
+/*
+* 在Java中，System.in.read(byte[] b) 方法从标准输入流中
+* 读取一些字节数并将它们存储在数组 b 中。它返回实际读取的字节数。
+*  */
