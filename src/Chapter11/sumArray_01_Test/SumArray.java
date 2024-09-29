@@ -1,4 +1,4 @@
-package Chapter11.sumArray_Test;
+package Chapter11.sumArray_01_Test;
 
 public class SumArray {
 
