@@ -1,4 +1,4 @@
-package Chapter8;
+package Chapter8.Series_test;
 
 public class SeriesDemo2 {
     public static void main(String[] args) {
