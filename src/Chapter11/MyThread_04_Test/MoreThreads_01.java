@@ -1,6 +1,6 @@
 package Chapter11.MyThread_04_Test;
 
-public class MoreThreads {
+public class MoreThreads_01 {
     public static void main(String[] args) {
         System.out.println("Main thread starting.");
 
