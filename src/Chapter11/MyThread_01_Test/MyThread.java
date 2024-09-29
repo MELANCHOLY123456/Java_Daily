@@ -1,4 +1,4 @@
-package Chapter11.MyThread_Test;
+package Chapter11.MyThread_01_Test;
 
 public class MyThread implements Runnable {
     String threadName;
