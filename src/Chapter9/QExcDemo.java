@@ -8,8 +8,7 @@ public class QExcDemo {
         try {
             // overrun the queue
             for (int i = 0; i < 11; i++) {
-                System.out.print("Attempting to store : " +
-                        (char) ('A' + i));
+                System.out.print("Attempting to store : " + (char) ('A' + i));
                 q.put((char) ('A' + i));
                 System.out.println(" -- OK");
             }
