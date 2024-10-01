@@ -1,4 +1,4 @@
-package Chapter13.GenericMethod_Test;
+package Chapter13.Gen_Test.GenericMethod_Test;
 
 public class GenericMethodDemo {
     static <T extends Comparable<T>, V extends T> boolean arraysEqual(T[] x, V[] y) {
